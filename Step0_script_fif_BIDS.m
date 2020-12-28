@@ -11,7 +11,7 @@ clear;
 warning off
 
 %% PATH to data
-pathdatain = 'G:\Data\MEG\MEG_Raw_Natrure\'; % Give path of fif files as input
+pathdatain = 'G:\Data\MEG\MEG_Raw_Natrure\'; % Give path of fif files as input data
 pathdataout = 'G:\Data\MEG\MEG_BIDS\'; % Path to store the data in BIDS format
 
 %% PATH to add for dependencies
