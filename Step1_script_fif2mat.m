@@ -12,13 +12,18 @@ close all; clc;
 clear;
 warning off
 %% PATH to data
-pathdatain = 'G:\Data\MEG\MEG_Raw_Natrure\';
+currFolderName = pwd; 
+addpath(genpath(currFolderName));
+ft_defaults;
+pathdatain = 'G:\Data\MEG\MEG_Raw_Natrure\'; 
+pathdatain = '..\\'; 
 pathdataout = 'G:\Data\MEG\MEG_Mat_Nature\DataMEG\';
+
 
 %% PATH to add for dependencies
 % addpath(genpath('C:\Users\hr17576\OneDrive - University of Essex\Research\MEG\MI_MEG_HR_DR\TNSRE\fieldtrip')); %fieldtrip
 % ft_defaults;
-addpath(genpath('C:\Users\hr17576\OneDrive - University of Essex\Research\MEG\MI_MEG_HR_DR\TNSRE\functions'));
+% addpath(genpath('C:\Users\hr17576\OneDrive - University of Essex\Research\MEG\MI_MEG_HR_DR\TNSRE\functions'));
 %% Choose options
 chansel_option = 'all'; %('all'-all channels (306), 'grad'- gradiometers (204), 'mag'-magnetometers (102))
 sample_before_cue = 2000;
