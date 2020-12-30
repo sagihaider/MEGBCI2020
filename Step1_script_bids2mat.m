@@ -16,10 +16,10 @@ currFolder = pwd;
 addpath(genpath(currFolder));
 ft_defaults;
 % pathdatain = 'G:\Data\MEG\MEG_Raw_Natrure\';
-% rootpathData =
-rootpathdatain = fullfile(currFolder,'MEG_BIDS');
+rootpathData = '/sagihaider/OneDrive - University of Essex/Data/MEG/'
+rootpathdatain = fullfile(rootpathData,'MEG_BIDS');
 % pathdataout = 'G:\Data\MEG\MEG_Mat_Nature\DataMEG\';
-rootpathdataout = fullfile(currFolder,'DataMEG_mat');
+rootpathdataout = fullfile(rootpathData,'DataMEG_mat1');
 if ~exist(rootpathdataout, 'dir')
     mkdir(rootpathdataout);
 end
@@ -60,7 +60,7 @@ switch chansel_option
             SensorLabels.L_Occipital_Mag,SensorLabels.R_Occipital_Mag];
 end
 
-for sub=1:length(indsub)
+for sub=1:1%length(indsub)
     for ses = 1:2
         
         %             filename  = filenames_cell{cellfun(@isempty,regexp(filenames_cell,...
@@ -81,7 +81,7 @@ for sub=1:length(indsub)
                 fullfilenameout = fullfile(sessfolderpath,filenameout);
         end
 
-%         trlFile = fn_megbci_get_trial_details(fullfilenamein,sample_before_cue,sample_after_cue);
+         trlFile = fn_megbci_get_trial_details(fullfilenamein,sample_before_cue,sample_after_cue);
 %         cfg              = [];
 %         cfg.dataset      = fullfilenamein;
 %         cfg.channel      = ChanSel;
