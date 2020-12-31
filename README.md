@@ -17,6 +17,7 @@ In this repository, we have provided Matlab scripts for the following tasks:
 3. A script for single-trial MEG classification to produce the baseline results. 
 
 
-** Note: We have used [fieldtrip](https://www.fieldtriptoolbox.org/) toolbox for basic pre-processing of MEG BCI dataset. As a dependency we recommend to download the add fieldtrip to your Matlab path if you want to reproduce our results. 
+** Note: We have used [fieldtrip](https://www.fieldtriptoolbox.org/) toolbox for basic pre-processing of MEG BCI dataset. As a dependency we recommend to download the add fieldtrip to your Matlab path if you want to reproduce our results. You can download it from
+% https://github.com/sagihaider/fieldtrip.git 
 
 
