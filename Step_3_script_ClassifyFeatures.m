@@ -11,7 +11,7 @@ clear;
 warning off
 
 %% PATH to data
-pathdatain = 'G:\Data\MEG\MEG_Feature_NatureFinal\FBCSP';
+pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/FBCSP';
 
 %% Subject indexes
 indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20]; % Sub 4 has issues with triggers

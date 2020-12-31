@@ -2,24 +2,19 @@
 % School of Computing and Electronics Engineering, University of Essex, Colchester, England
 % contact: h.raza@essex.ac.uk
 % Date: 13/05/2019
+% Last updated: 31/12/2020
 
 % Classes: 1-Both Hand Imagery, 2-Both Feet Imagery
 % 3-Word generation, 4-Subtraction
-
+%% Close all windows, clear command prompt, and clear workspace
 close all; clc;
 clear;
 warning off
-
-% /Users/sagihaider/MEG/
-
-%% PATH to data
 %% PATH to data
 currFolder = pwd;
 addpath(genpath(currFolder));
 ft_defaults;
 pathdatain = '/Users/sagihaider/MEG/DataMEG_fif';
-
-% pathdatain = 'G:\Data\MEG\MEG_Raw_Natrure\'; % Give path of fif files as input data
 pathdataout = '/Users/sagihaider/MEG/MEG_BIDS'; % Path to store the data in BIDS format
 
 %% Subject indexes
@@ -27,7 +22,8 @@ indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20];
 age = [37, 36, 23, 23, 32, 28, 32, 23, 29, 26, 30, 24, 36, 27, 40, 22, 23];
 sex = ['m'; 'm'; 'm'; 'f'; 'f'; 'm'; 'm'; 'm'; 'm'; 'm'; 'f'; 'm'; 'm'; 'm'; 'm'; 'm'; 'm'];
 
-for sub=1:2%:length(indsub)
+%% Read each subject fif files to convert them into BIDS 
+for sub=1:length(indsub)
     % Create a folder name  'sub-' num2str(indsub(sub))
     foldername = fullfile(pathdataout,['sub-' num2str(indsub(sub))]);
     mkdir(foldername)
@@ -63,7 +59,7 @@ for sub=1:2%:length(indsub)
         cfg.InstitutionName = 'Ulster University';
         cfg.InstitutionalDepartmentName = 'Intelligent System Research Centre';
         cfg.bidsroot                = pathdataout;
-        cfg.sub                     = num2str(sub);
+        cfg.sub                     = num2str(indsub(sub));
         cfg.ses                     = num2str(sess);
         cfg.datatype                = 'meg';
         

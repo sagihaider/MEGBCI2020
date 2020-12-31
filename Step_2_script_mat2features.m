@@ -19,11 +19,6 @@ if do_resample
     pathdataout = 'G:\Data\MEG\MEG_Feature_Nature\MuAlphaBetaResamp';
 end
 
-%% PATH to add for dependencies
-% addpath(genpath('C:\Users\hr17576\OneDrive - University of Essex\Research\MEG\MI_MEG_HR_DR\TNSRE\fieldtrip')); %fieldtrip
-% ft_defaults;
-addpath(genpath('C:\Users\hr17576\OneDrive - University of Essex\Research\MEG\MI_MEG_HR_DR\TNSRE\functions'));
-
 %% Subject indexes and Channel labels
 indsub=[1,2,3,4,5,6,7,9,11,12,13,14,15,16,17,18,19,20]; % Sub 4 has issues with triggers
 % indsub=[7,9,11,12,13,14,15,16,17,18,19,20]; % Sub 4 has issues with triggers (Already extracted features until Sub 6)
