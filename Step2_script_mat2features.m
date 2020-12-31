@@ -3,14 +3,19 @@
 % Electronics Engineering, University of Essex, Colchester, England
 % contact: h.raza@essex.ac.uk
 % Date: 13/05/2019
+% Last updated: 31/12/2020
 
 % Classes: 1-Both Hand Imagery, 2-Both Feet Imagery
 % 3-Word generation, 4-Subtraction
+
 close all; clc;
 clear;
 warning off
 
 %% PATH to data
+
+% add filedtrip to path of your Matlab. You can download it from
+% https://github.com/sagihaider/fieldtrip.git 
 restoredefaultpath
 addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
 ft_defaults
@@ -29,7 +34,6 @@ if do_resample
     if ~exist(rootpathdataout, 'dir')
         mkdir(rootpathdataout);
     end
-    
 end
 
 %% Subject indexes and Channel labels

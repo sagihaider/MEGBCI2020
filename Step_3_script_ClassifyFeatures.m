@@ -11,10 +11,13 @@ clear;
 warning off
 
 %% PATH to data
-pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/FBCSP';
+
+pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/MuBeta';
+% pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/FBCSP';
+% pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/MuAlphaBeta';
 
 %% Subject indexes
-indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20]; % Sub 4 has issues with triggers
+indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20]; 
 acc_sub=[];
 n_comp_csp=[1 6];
 for iSub=1:length(indsub)

@@ -11,9 +11,16 @@ close all; clc;
 clear;
 warning off
 %% PATH to data
+
+% add filedtrip to path of your Matlab. You can download it from
+% https://github.com/sagihaider/fieldtrip.git 
+restoredefaultpath
+addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
+ft_defaults
+
 currFolder = pwd;
 addpath(genpath(currFolder));
-ft_defaults;
+
 pathdatain = '/Users/sagihaider/MEG/DataMEG_fif';
 pathdataout = '/Users/sagihaider/MEG/MEG_BIDS'; % Path to store the data in BIDS format
 
@@ -52,21 +59,19 @@ for sub=1:length(indsub)
         cfg.method       = 'copy';
         cfg.dataset      = fullfilenamein;
         cfg.outputfile   = fullfilenameout;
-        
-        cfg.TaskName                          = 'bcimici'; % REQUIRED. Name of the task (for resting state use the "rest" prefix). Different Tasks SHOULD NOT have the same name. The Task label is derived from this field by removing all non alphanumeric ([a-zA-Z0-9]) characters.
-        
-        %         cfg.task         = 'bcimici';
+        cfg.TaskName     = 'bcimici'; 
         cfg.InstitutionName = 'Ulster University';
         cfg.InstitutionalDepartmentName = 'Intelligent System Research Centre';
         cfg.bidsroot                = pathdataout;
         cfg.sub                     = num2str(indsub(sub));
         cfg.ses                     = num2str(sess);
         cfg.datatype                = 'meg';
+        cfg.TaskDescription             = 'Motor and Cognitive Imagery Tasks';
+        cfg.Instructions                = 'Both hands movement, Both feet movement, Sustraction, Word';
         
         cfg.participants.age        = age(sub);
         cfg.participants.sex        = sex(sub);
-        cfg.TaskDescription             = 'Motor and Cognitive Imagery Tasks';
-        cfg.Instructions                = 'Both hands movement, Both feet movement, Sustraction, Word';
+
         
         % MEG Discription
         cfg.meg.SamplingFrequency             = 1000; %ft_getopt(cfg.meg, 'SamplingFrequency'           ); % REQUIRED. Sampling frequency (in Hz) of all the data in the recording, regardless of their type (e.g., 2400)
@@ -76,14 +81,12 @@ for sub=1:length(indsub)
         cfg.meg.DigitizedLandmarks            = true; %ft_getopt(cfg.meg, 'DigitizedLandmarks'          ); % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
         cfg.meg.DigitizedHeadPoints           = true; %ft_getopt(cfg.meg, 'DigitizedHeadPoints'         ); % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
         cfg.meg.RecordingType                 = 'continuous';
-        %         cfg.meg.EpochLength             = 0;
         cfg.meg.ContinuousHeadLocalization= true;
         
         % Dataset Discription
-        %   cfg.dataset_description.writesidecar        = string
         cfg.dataset_description.Name                = 'write something here'
         cfg.dataset_description.BIDSVersion         = '1.4';
-        %   cfg.dataset_description.License             = string
+        %   cfg.dataset_description.License         = 'CCO'
         cfg.dataset_description.Authors             = {'Raza, H.', 'Rathee, D.', 'Roy, S.', 'Prasad, G.'};
         %   cfg.dataset_description.Acknowledgements    = string
         %   cfg.dataset_description.HowToAcknowledge    = string
@@ -104,16 +107,7 @@ for sub=1:length(indsub)
         % cfg.channels.type               = ft_getopt(cfg.channels, 'type'               , nan);  % REQUIRED. Type of channel; MUST use the channel types listed below.
         % cfg.channels.units              = ft_getopt(cfg.channels, 'units'              , nan);  % REQUIRED. Physical unit of the data values recorded by this channel in SI (see Appendix V: Units for allowed symbols).
         
-        
-        %
-        %         % The configuration structure should contains
-        %         cfg.method       = 'copy';
-        %         cfg.dataset      = fullfilenamein;
-        %         cfg.outputfile   = fullfilenameout;
-        %         cfg.task         = 'bcimici';
-        %         cfg.InstitutionName = 'Ulster University';
-        %         cfg.coordsystem.MEGCoordinateSystem = 'ElektaNeuromag'
-        
+
         data2bids(cfg);
     end
 end

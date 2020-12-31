@@ -3,18 +3,25 @@
 % Electronics Engineering, University of Essex, Colchester, England
 % contact: h.raza@essex.ac.uk
 % Date: 13/05/2019
+% Last updated: 31/12/2020
 
 % TODO: error with subject where data is not recoreded into two bloocks
 
 % Classes: 1-Both Hand Imagery, 2-Both Feet Imagery
 % 3-Word generation, 4-Subtraction
+
 close all; clc;
 clear;
 warning off
 %% PATH to data
-currFolder = pwd;
-addpath(genpath(currFolder));
-ft_defaults;
+
+% add filedtrip to path of your Matlab. You can download it from
+% https://github.com/sagihaider/fieldtrip.git 
+
+restoredefaultpath
+addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
+ft_defaults
+
 rootpathData = '/Users/sagihaider/MEG/';
 rootpathdatain = fullfile(rootpathData,'MEG_BIDS');
 rootpathdataout = fullfile(rootpathData,'DataMEG_mat');
@@ -28,8 +35,7 @@ sample_before_cue = 2000; % after 2000 samples the cue to appearing; so here the
 sample_after_cue = 5000; % at 5000 sample the subject stop imagery
 
 %% Subject indexes
-indsub=[6,7,9,11,12,13,14,15,16,17,18,19,20];
-% indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20];
+indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20];
 
 %% Create trials in 3D (cloumn- channel, rows- samples, 3d - trials)
 load('Elekta_Neuromag_Sensors.mat');
@@ -74,14 +80,13 @@ for sub=1:length(indsub)
                 fullfilenameout = fullfile(sessfolderpath,filenameout);
         end
         
-        trlFile = fn_megbci_get_trial_details(fullfilenamein,sample_before_cue,sample_after_cue);
+        trlFile = fn_megbci_get_trial_details(fullfilenamein,sample_before_cue,sample_after_cue); % Reading fif files
         cfg              = [];
         cfg.dataset      = fullfilenamein;
         cfg.channel      = ChanSel;
         cfg.trl          = trlFile;
         cfg.continuous   = 'no';
         dataAll = ft_preprocessing(cfg);
-        % Edit the data struct for upload
         fields_remove={'hdr','sampleinfo','cfg'};
         dataMAT=rmfield(dataAll,fields_remove);
         
