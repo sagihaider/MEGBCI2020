@@ -50,6 +50,13 @@ for sub=1:length(indsub)
                 fullfilenamein = fullfile(pathdatain, 'Session_02' , filenamein);
         end
         
+%         hdr = ft_read_header(fullfilenamein);
+%         
+%         headshape = ft_read_headshape(fullfilenamein);
+%         cfg.coordsystem.HeadCoilCoordinates  = {'NAS': [12.7,21.3,13.9], 'LPA': [5.2,11.3,9.6], 'RPA': [20.2,11.3,9.1]}
+% cfg = [];
+% cfg.method = 'headshape';
+% fid = ft_electrodeplacement(headshape);
         
         %         fullfilenamein = fullfile(pathdatain,filenamein);
         fullfilenameout = fullfile(fullfilepathnameout,filenameout);
@@ -99,8 +106,9 @@ for sub=1:length(indsub)
 %         cfg.coordsystem.HeadCoilCoordinates        = {};
         cfg.coordsystem.MEGCoordinateSystem        = 'ElektaNeuromag'; % REQUIRED. Defines the coordinate system for the MEG sensors. See Appendix VIII: preferred names of Coordinate systems. If "Other", provide definition of the coordinate system in [MEGCoordinateSystemDescription].
         cfg.coordsystem.MEGCoordinateUnits         = 'cm'; %ft_getopt(cfg.coordsystem, 'MEGCoordinateUnits'                             ); % REQUIRED. Units of the coordinates of MEGCoordinateSystem. MUST be ???m???, ???cm???, or ???mm???.
-%         cfg.coordsystem.HeadCoilCoordinateSystem  = 'Neuromag';
-%         cfg.coordsystem.HeadCoilCoordinateSystemDescription = 'Neuromag head coordinates, orientation RAS, origin between the ears';
+        cfg.coordsystem.HeadCoilCoordinateSystem  = 'ElektaNeuromag';
+        cfg.coordsystem.HeadCoilCoordinateUnits  = 'cm';
+        cfg.coordsystem.HeadCoilCoordinateSystemDescription = 'Neuromag head coordinates, orientation RAS, origin between the ears';
 
         % %% columns in the channels.tsv
         % cfg.channels.name               = ft_getopt(cfg.channels, 'name'               , nan);  % REQUIRED. Channel name (e.g., MRT012, MEG023)
