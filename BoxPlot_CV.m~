@@ -1,0 +1,24 @@
+% Code by @ Dr Haider Raza
+% Institute for Analytics and Data Science, School of Computing and
+% Electronics Engineering, University of Essex, Colchester, England
+% contact: h.raza@essex.ac.uk
+% Date: 13/05/2019
+
+% Classes: 1-Both Hand Imagery, 2-Both Feet Imagery
+% 3-Word generation, 4-Subtraction
+close all; clc;
+clear;
+warning off
+
+%% PATH to data
+currFolder = pwd;
+addpath(genpath(currFolder));
+
+acc_cv_mb = load('acc_cv_mubeta.mat');
+acc_cv_fbcsp = load('acc_cv_fbcsp.mat');
+boxplot([acc_cv_mb.cv_acc,acc_cv_fbcsp.cv_acc])
+
+
+acc_test_mb = load('acc_test_mubeta.mat');
+acc_test_fbcsp = load('acc_test_fbcsp.mat');
+boxplot()
