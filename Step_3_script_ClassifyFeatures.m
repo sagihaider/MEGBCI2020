@@ -14,8 +14,8 @@ warning off
 currFolder = pwd;
 addpath(genpath(currFolder));
 
-pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/MuBeta';
-% pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/FBCSP';
+% pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/MuBeta';
+pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/FBCSP';
 % pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/MuAlphaBeta';
 
 %% Subject indexes
