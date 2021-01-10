@@ -3,7 +3,7 @@
 % Electronics Engineering, University of Essex, Colchester, England
 % contact: h.raza@essex.ac.uk
 % Date: 13/05/2019
-% Last updated: 09/01/2021
+% Last updated: 31/12/2020
 
 % TODO: error with subject where data is not recoreded into two bloocks
 
@@ -64,7 +64,7 @@ switch chansel_option
             SensorLabels.L_Occipital_Mag,SensorLabels.R_Occipital_Mag];
 end
 
-classesinfo = {1, 'Both Hand Imagery'; 2 , 'Both Feet Imagery'; 3, 'Word generation'; 4, 'Subtraction'};
+classesinfo = {1 'text', rand(5,10,2), {11; 22; 33}}
 
 for sub=1:length(indsub)
     for ses = 1:2
@@ -94,7 +94,7 @@ for sub=1:length(indsub)
         dataAll = ft_preprocessing(cfg);
         fields_remove={'hdr','sampleinfo','cfg'};
         dataMAT=rmfield(dataAll,fields_remove);
-        dataMAT.trialclass = classesinfo;
-        save(fullfilenameout, 'dataMAT', '-v7.3');
+        
+%         save(fullfilenameout, 'dataMAT', '-v7.3');
     end
 end

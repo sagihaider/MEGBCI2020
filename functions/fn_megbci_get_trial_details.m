@@ -30,12 +30,36 @@ lineT4 = [0 diff(lineT4)];
 lineT4(lineT4<0) = 0;
 onset4 = find(lineT4);
 
+len1 = length(onset1);
+len2 = length(onset2);
+len3 = length(onset3);
+len4 = length(onset4);
+
+class1 = 'Both Hand Imagery';
+class2 = 'Both Feet Imagery';
+class3 = 'Word generation Imagery';
+class4 = 'Subtraction Imagery';
+
+% Dheeraj
 OnsetAllClass=[onset1 onset2 onset3 onset4];
 tmpclasscode=[ones(1,length(onset1)) repmat(2,1,length(onset2)) repmat(3,1,length(onset3)) repmat(4,1,length(onset4))]';
 [SortOnsetAllClass,indx]=sort(OnsetAllClass);
 tmptrl=[SortOnsetAllClass' tmpclasscode(indx)];
 trl_file = [tmptrl(:,1)-sample_before_cue+1, tmptrl(:,1)+sample_after_cue, repmat(-sample_before_cue,size(tmptrl,1),1), tmptrl(:,2)];
 
+% Added by Haider
+% OnsetAllClass=[onset1 onset2 onset3 onset4];
+% tmpclasscode=[ones(1,length(onset1)) repmat(2,1,length(onset2)) repmat(3,1,length(onset3)) repmat(4,1,length(onset4))]';
+% tmpclassname = repelem({class1, class2, class3, class4}, [len1, len2, len3, len4]); 
+% tmpclassname=tmpclassname';
+% [SortOnsetAllClass,indx]=sort(OnsetAllClass);
+% tmptrl=[num2cell(SortOnsetAllClass') num2cell(tmpclasscode(indx)) tmpclassname(indx)]; % labels in cell string
+% 
+% trial_s = num2cell(cell2mat(tmptrl(:,1))-sample_before_cue+1) % sample of start trial
+% trial_e = num2cell(cell2mat(tmptrl(:,1))+sample_after_cue) % sample of end trial
+% delay_cue = num2cell(repmat(-sample_before_cue,size(tmptrl,1),1)) % cue apperance delay
+% lbl = num2cell(tmpclasscode(indx)) % labels
+% trl_file = [trial_s trial_e delay_cue lbl tmptrl(:,3)]; % merge cell array
 
 end
 
