@@ -35,6 +35,7 @@ f = @(x1,x2) K + L(1)*x1 + L(2)*x2;
 h1 = ezplot(f,[minA_Tr maxA_Tr minB_Tr maxB_Tr]);
 set(h1,'Color',[0 0 0]);
 set(h1,'LineWidth',2);
+set(h1,'LineStyle','--');
 xlabel('First best feature','FontWeight','bold');
 ylabel('Second best feature','FontWeight','bold');
 title('{\b Covariate Shift in CSP features}')
@@ -77,10 +78,17 @@ f = @(x1,x2) K + L(1)*x1 + L(2)*x2;
 h2 = ezplot(f,[minA maxA minB maxB]);
 set(h2,'Color',[1 0 0]);
 set(h2,'LineWidth',2);
+set(h2,'LineStyle','-.');
 xlabel('First best feature','FontWeight','bold');
 ylabel('Second best feature','FontWeight','bold');
 title(tex)
 Leg = [g1 g2 g5 g6 h1 h2];
-legend([g1 g2 g5 g6 h1 h2], {'Tr_{C1}','Tr_{C2}','Ts_{C1}','Ts_{C2}','Tr Plane','Ts Plane'})
+leg1=['Tr_{C' num2str(nComb(iComb,1)), '}']
+leg2=['Tr_{C' num2str(nComb(iComb,2)), '}']
+leg3=['Ts_{C' num2str(nComb(iComb,1)), '}']
+leg4=['Ts_{C' num2str(nComb(iComb,2)), '}']
+
+legend([g1 g2 g5 g6 h1 h2], {leg1, leg2, leg3, leg4,'Tr Plane','Ts Plane'})
+% legend([g1 g2 g5 g6 h1 h2], {'Tr_{C1}','Tr_{C2}','Ts_{C1}','Ts_{C2}','Tr Plane','Ts Plane'})
 
 end

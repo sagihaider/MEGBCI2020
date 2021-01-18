@@ -19,7 +19,7 @@ warning off
 % https://github.com/sagihaider/fieldtrip.git 
 
 restoredefaultpath
-addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
+addpath '/Users/sagihaider/GitHub/fieldtrip'
 ft_defaults
 
 currFolder = pwd;
