@@ -9,11 +9,13 @@ We have provided the MEG BCI dataset in two different file formats:
 
 In this repository, we have provided Matlab scripts for the following tasks:
 
-1. **Step1_script_bids2mat.m** :  Script to convert BIDS format data to .MAT format. 
+1. **Step0_script_fif2bids.m** :  Script to convert MEG data from Elekta MEG format (.fif) to .MAT format. 
 
-2.  **Step2_script_mat2features.m** :Script to extract the motor and cognitive imagery features using common spatial patterns (CSP) algorithm. 
+2. **Step1_script_bids2mat.m** :  Script to convert MEG data from BIDS format to .MAT format. 
 
-3. **Step3_script_ClassifyFeatures.m** :Script for single-trial MEG classification to produce the baseline results. 
+3. **Step2_script_mat2features.m** :Script to extract the motor and cognitive imagery features using common spatial patterns (CSP) algorithm. 
+
+4. **Step3_script_ClassifyFeatures.m** :Script for single-trial MEG classification to produce the baseline results. 
 
 
 ** Note: We have used [fieldtrip](https://www.fieldtriptoolbox.org/) toolbox for basic pre-processing of MEG BCI dataset. As a dependency we recommend to download and add fieldtrip to your Matlab path if you want to reproduce our results. You can download it from https://github.com/sagihaider/fieldtrip.git 
