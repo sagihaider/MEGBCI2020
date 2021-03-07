@@ -19,15 +19,16 @@ warning off
 % https://github.com/sagihaider/fieldtrip.git 
 
 restoredefaultpath
-addpath '/Users/sagihaider/GitHub/fieldtrip'
+% addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
+addpath 'C:\Users\hr17576\OneDrive - University of Essex\Research\MEGNature\fieldtrip'
 ft_defaults
 
 currFolder = pwd;
 addpath(genpath(currFolder));
 
-rootpathData = '/Users/sagihaider/MEG/';
+rootpathData = 'E:\Data\MEG';
 rootpathdatain = fullfile(rootpathData,'MEG_BIDS');
-rootpathdataout = fullfile(rootpathData,'DataMEG_mat');
+rootpathdataout = fullfile(rootpathData,'MEG_mat');
 if ~exist(rootpathdataout, 'dir')
     mkdir(rootpathdataout);
 end
@@ -38,6 +39,7 @@ sample_before_cue = 2000; % after 2000 samples the cue to appearing; so here the
 sample_after_cue = 5000; % at 5000 sample the subject stop imagery
 
 %% Subject indexes
+
 indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20];
 
 %% Create trials in 3D (cloumn- channel, rows- samples, 3d - trials)
