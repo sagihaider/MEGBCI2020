@@ -1,4 +1,4 @@
-# Nature-Scientific-Data-2021
+# MEGBCI2020
 ## This project is done in collaboration with Dr Haider Raza, Sujit Roy and Prof. Girijesh Prasad.  
 
 We release a 306-channel MEG-BCI data recorded at 1KHz sampling frequency during four mental imagery tasks (i.e. hand imagery, feet imagery, subtraction imagery, and word generation imagery). The dataset contains two sessions of MEG recordings performed on separate days from 17 healthy participants using a typical BCI imagery paradigm. The current dataset will be the only publicly available MEG imagery BCI dataset as per our knowledge. The dataset can be used by the scientific community towards the development of novel pattern recognition machine learning methods to detect brain activities related to MI and CI tasks using MEG signals.
