@@ -10,22 +10,6 @@ Dataset: https://doi.org/10.6084/m9.figshare.c.5101544&#x201D
 Article: https://doi.org/10.1038/s41597-021-00899-7 
 ```
 
-BibTeX:
-```
-@article{Rathee2021,
-title = {{A magnetoencephalography dataset for motor and cognitive imagery-based brain-computer interface}},
-author = {Rathee, Dheeraj and Raza, Haider and Roy, Sujit and Prasad, Girijesh},
-doi = {10.1038/s41597-021-00899-7},
-issn = {2052-4463},
-journal = {Scientific Data},
-number = {1},
-pages = {120},
-url = {https://doi.org/10.1038/s41597-021-00899-7},
-volume = {8},
-year = {2021}
-}
-```
-
 We have provided the MEG BCI dataset in two different file formats:
 
 1. Brain Imaging Data Structure **(BIDS)**. To read more [click](https://bids.neuroimaging.io/index.html) and under BIDS format the raw data is avialable in Functional Image File Format **(.fif)** files. To read more [click](https://www.dropbox.com/s/q58whpso2jt9tx0/Fiff.pdf?dl=0) 
@@ -44,3 +28,22 @@ In this repository, we have provided Matlab scripts for the following tasks:
 
 ** Note: We have used [fieldtrip](https://www.fieldtriptoolbox.org/) toolbox for basic pre-processing of MEG BCI dataset. As a dependency we recommend to download and add fieldtrip to your Matlab path if you want to reproduce our results. 
 
+
+***
+References:
+
+Please cite our work: 
+```
+@article{Rathee2021,
+title = {{A magnetoencephalography dataset for motor and cognitive imagery-based brain-computer interface}},
+author = {Rathee, Dheeraj and Raza, Haider and Roy, Sujit and Prasad, Girijesh},
+doi = {10.1038/s41597-021-00899-7},
+issn = {2052-4463},
+journal = {Scientific Data},
+number = {1},
+pages = {120},
+url = {https://doi.org/10.1038/s41597-021-00899-7},
+volume = {8},
+year = {2021}
+}
+```
