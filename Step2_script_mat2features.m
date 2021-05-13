@@ -17,13 +17,15 @@ warning off
 % add filedtrip to path of your Matlab. You can download it from
 % https://github.com/sagihaider/fieldtrip.git 
 restoredefaultpath
-addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
+% addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
+addpath 'C:\Users\hr17576\OneDrive - University of Essex\Research\MEGNature\fieldtrip'
 ft_defaults
 
 currFolder = pwd;
 addpath(genpath(currFolder));
 
-rootpathData = '/Users/sagihaider/MEG/';
+rootpathData = 'E:\Data\MEG';
+% rootpathdatain = fullfile(rootpathData,'MEG_mat');
 rootpathdatain = fullfile(rootpathData,'DataMEG_mat');
 
 do_resample = 1;
@@ -37,7 +39,8 @@ if do_resample
 end
 
 %% Subject indexes and Channel labels
-indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20]; % Sub 4 has issues with triggers
+indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20]; 
+
 chansel_option = 'grad'; %('all'-all channels (306), 'grad'- gradiometers (204), 'mag'-magnetometers (102))
 
 %% Select Channel for further processing

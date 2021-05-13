@@ -15,10 +15,12 @@ currFolder = pwd;
 addpath(genpath(currFolder));
 
 % pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/MuBeta';
-pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/FBCSP';
+% pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures1/FBCSP';
 % pathdatain = '/Users/sagihaider/MEG/DataMEG_matFeatures/MuAlphaBeta';
 
+pathdatain = 'E:\Data\MEG\DataMEG_matFeatures/MuBeta';
 %% Subject indexes
+
 indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20]; 
 acc_sub=[];
 n_comp_csp=[1 6];
