@@ -5,9 +5,9 @@ We release a 306-channel MEG-BCI data recorded at 1KHz sampling frequency during
 Dataset and Article Links:
 
 ```
-Dataset: https://doi.org/10.6084/m9.figshare.c.5101544  
+Dataset: [Link](https://doi.org/10.6084/m9.figshare.c.5101544)
 
-Article: https://doi.org/10.1038/s41597-021-00899-7 
+Article: [Link](https://doi.org/10.1038/s41597-021-00899-7)
 ```
 
 We have provided the MEG BCI dataset in two different file formats:
